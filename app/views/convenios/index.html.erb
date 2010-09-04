@@ -1,0 +1,36 @@
+<h1>Rastro de lineas convenios</h1>
+
+<%= link_to 'Reluciente Convenio', new_convenio_path %>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Fecha inicio</th>
+    <th>Fecha fin</th>
+    <th>Monto</th>
+    <th>Moneda</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @convenios.each do |convenio| %>
+  <tr>
+    <td><%= convenio.nombre %></td>
+    <td><%= convenio.descripcion %></td>
+    <td><%= convenio.fecha_inicio %></td>
+    <td><%= convenio.fecha_fin %></td>
+    <td><%= convenio.monto %></td>
+    <td><%= convenio.moneda %></td>
+    <td><%= link_to 'Brilla tu Diamante Loco', convenio %></td>
+    <td><%= link_to 'Un paso en la evolucion', edit_convenio_path(convenio) %></td>
+    <td><%= link_to 'Busca y destruye', convenio, :confirm => 'Después de eso no hay vuelta atrás', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+

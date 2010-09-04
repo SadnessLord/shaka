@@ -1,0 +1,28 @@
+<h1>Rastro de lineas usuarios</h1>
+
+<%= link_to 'Reluciente Usuario', new_usuario_path %>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @usuarios.each do |usuario| %>
+  <tr>
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.apellidos %></td>
+    <td><%= link_to 'Brilla tu Diamante Loco', usuario %></td>
+    <td><%= link_to 'Un paso en la evolucion', edit_usuario_path(usuario) %></td>
+    <td><%= link_to 'Busca y destruye', usuario, :confirm => 'Después de eso no hay vuelta atrás', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
